@@ -72,6 +72,7 @@ class Game:
     
     def show_score(self) -> None:
         print(f'Очков: {self.field.player.score}')
+    
     def run(self) -> None:
         '''
         Главный цикл игры:
@@ -93,7 +94,7 @@ class Game:
             if not move:
                 self.is_running = False
             self.field.player.score += 100
-            sleep(1/10)
+            sleep(1 / setup.FPS)
         # конец игры
         
         system('cls')

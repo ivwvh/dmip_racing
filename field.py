@@ -52,13 +52,8 @@ class Field:
             self.field[obstacle.y][obstacle.x].content = obstacle
 
     def check_neighbours(self, y, x) -> bool:
-        if x == 1:
-            if not self.field[y][x + 1].content and not self.field[y][x - 1].content:
-                if not self.field[y + 1][x].content and not self.field[y + 2][x].content:
-                    return True
-        else:
-            if not self.field[y + 1][x].content and not self.field[y + 2][x].content:
-                    return True
+        if not self.field[y + 1][x].content and not self.field[y + 2][x].content:
+                return True
     
     def move_obstacles(self) -> None:
         for obstacle in self.obstacles:
